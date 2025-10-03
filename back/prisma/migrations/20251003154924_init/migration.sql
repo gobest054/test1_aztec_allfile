@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `PatientCardRead` ADD COLUMN `flag` INTEGER NOT NULL DEFAULT 1;

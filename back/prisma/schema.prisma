@@ -1,0 +1,22 @@
+
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+    
+}
+
+
+model PatientCardRead {
+    id         Int       @id @default(autoincrement())
+    cid        String    @db.VarChar(13)
+    first_name String?   @db.VarChar(100)
+    last_name  String?   @db.VarChar(100)
+
+    dob        DateTime?
+    createdAt  DateTime  @default(now()) @db.Timestamp(0)
+    flag       Int       @default(1)
+}
