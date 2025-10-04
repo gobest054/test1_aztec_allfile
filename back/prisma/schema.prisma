@@ -15,8 +15,7 @@ model PatientCardRead {
     cid        String    @db.VarChar(13)
     first_name String?   @db.VarChar(100)
     last_name  String?   @db.VarChar(100)
-
     dob        DateTime?
-    createdAt  DateTime  @default(now()) @db.Timestamp(0)
+    read_time  DateTime  @default(now()) @db.Timestamp(6)
     flag       Int       @default(1)
 }
