@@ -62,7 +62,8 @@ testController.updateFlagPatient = async (req, res, next) => {
                 id:id
             },
             data:{
-                flag:2
+                flag:2,
+                read_time: new Date().toISOString(),
             }
         })
         if(updateFlag){
