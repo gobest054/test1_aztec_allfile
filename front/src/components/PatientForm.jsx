@@ -34,6 +34,7 @@ function PatientForm() {
             console.log(body)
             const response = await createPatient(body)
             console.log("success", response)
+            window.location.reload();
 
         } catch (error) {
             console.log(error)
@@ -42,57 +43,66 @@ function PatientForm() {
 
     };
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="cid">CID (เลขบัตรประชาชน):</label>
-                <input
-                    type="text"
-                    id="cid"
-                    name="cid"
-                    value={formData.cid}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
+        <div className='flex items-center justify-center'>
+            <form onSubmit={handleSubmit} className='' >
+                <div className='m-3'>
+                    <label htmlFor="cid">CID (เลขบัตรประชาชน):</label>
+                    <input
+                        type="text"
+                        id="cid"
+                        name="cid"
+                        value={formData.cid}
+                        onChange={handleChange}
+                        required
+                        className='input input-success'
+                    />
+                </div>
 
-            <div>
-                <label htmlFor="firstName">First Name (ชื่อ):</label>
-                <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
+                <div className='m-3'>
+                    <label htmlFor="firstName">First Name (ชื่อ):</label>
+                    <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required
+                        className='input input-success'
 
-            <div>
-                <label htmlFor="lastName">Last Name (นามสกุล):</label>
-                <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
+                    />
+                </div>
 
-            <div>
-                <label htmlFor="dob">Date of Birth (วันเกิด):</label>
-                <input
-                    type="date"
-                    id="dob"
-                    name="dob"
-                    value={formData.dob}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
+                <div className='m-3'>
+                    <label htmlFor="lastName">Last Name (นามสกุล):</label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required
+                        className='input input-success'
 
-            <button type="submit">Submit</button>
-        </form>
+                    />
+                </div>
+
+                <div className='m-3'>
+                    <label htmlFor="dob">Date of Birth (วันเกิด):</label>
+                    <input
+                        type="date"
+                        id="dob"
+                        name="dob"
+                        value={formData.dob}
+                        onChange={handleChange}
+                        required
+                        className='input input-success'
+
+                    />
+                </div>
+
+                <button type="submit" className='btn btn-active btn-success m-3'>Submit</button>
+            </form>
+        </div>
     )
 }
 
